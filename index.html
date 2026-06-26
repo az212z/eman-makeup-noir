@@ -49,10 +49,16 @@ header.scrolled nav{padding:13px 0}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px;z-index:950}
 .burger span{width:26px;height:2px;background:var(--gold);transition:.3s}
 
-/* float instagram */
-.ig{position:fixed;bottom:26px;inset-inline-start:26px;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--burg),var(--bloom));display:flex;align-items:center;justify-content:center;box-shadow:0 10px 34px -8px rgba(124,75,87,.7),var(--glow);z-index:800;transition:.35s;border:1px solid var(--gold)}
-.ig:hover{transform:scale(1.08) rotate(-4deg)}
-.ig svg{width:30px;height:30px;fill:var(--ivory)}
+/* floating action buttons (whatsapp + instagram) */
+.floats{position:fixed;bottom:26px;inset-inline-start:26px;z-index:800;display:flex;flex-direction:column;gap:14px}
+.fab{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.35s;border:1px solid var(--gold)}
+.fab svg{width:30px;height:30px}
+.fab-wa{background:#25D366;box-shadow:0 10px 34px -8px rgba(37,211,102,.65),0 0 24px rgba(201,162,75,.18)}
+.fab-wa svg{fill:#fff}
+.fab-wa:hover{transform:scale(1.08)}
+.fab-ig{background:linear-gradient(135deg,var(--burg),var(--bloom));box-shadow:0 10px 34px -8px rgba(124,75,87,.7),var(--glow)}
+.fab-ig svg{fill:var(--ivory)}
+.fab-ig:hover{transform:scale(1.08) rotate(-4deg)}
 
 /* btn */
 .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;border-radius:44px;font-size:1rem;font-weight:500;transition:.45s;cursor:pointer;border:1px solid transparent;font-family:"Tajawal",sans-serif}
@@ -168,6 +174,28 @@ header.scrolled nav{padding:13px 0}
 .cta p{color:rgba(237,230,221,.74);margin:0 auto 34px;font-size:1.1rem;max-width:42ch}
 .cta .handle{font-family:"Cormorant Garamond",serif;letter-spacing:.18em;color:var(--gold);margin-top:26px;font-size:.9rem}
 
+/* booking section */
+.book-scene{background:linear-gradient(180deg,#16090E,var(--char) 70%)}
+.book-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center;width:100%}
+.book-intro .head{margin-bottom:26px}
+.book-intro p{color:rgba(237,230,221,.74);font-size:1.06rem;margin-bottom:14px}
+.book-intro .wa-direct{display:inline-flex;align-items:center;gap:10px;margin-top:14px;color:var(--gold);font-family:"Cormorant Garamond",serif;letter-spacing:.12em;font-size:1rem}
+.book-intro .wa-direct svg{width:22px;height:22px;fill:#25D366}
+.bform{background:linear-gradient(160deg,rgba(58,22,32,.34),rgba(14,11,12,.2));border:1px solid var(--line);border-radius:14px;padding:38px 34px;box-shadow:0 28px 70px -34px rgba(0,0,0,.85)}
+.bform .field{margin-bottom:20px}
+.bform label{display:block;font-family:"Tajawal",sans-serif;font-weight:500;font-size:.88rem;color:var(--gold);margin-bottom:8px;letter-spacing:.02em}
+.bform input,.bform select,.bform textarea{width:100%;background:rgba(14,11,12,.55);border:1px solid var(--line);border-radius:9px;padding:13px 15px;color:var(--ivory);font-family:"Tajawal",sans-serif;font-size:1rem;font-weight:300;transition:.3s;outline:none}
+.bform input::placeholder,.bform textarea::placeholder{color:rgba(237,230,221,.4)}
+.bform input:focus,.bform select:focus,.bform textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.14)}
+.bform select{appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(0% + 18px) calc(50% - 3px),calc(0% + 23px) calc(50% - 3px);background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+.bform select option{background:#16090E;color:var(--ivory)}
+.bform textarea{resize:vertical;min-height:86px;line-height:1.7}
+.bform .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.bform .submit{width:100%;margin-top:6px;justify-content:center;display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:44px;border:1px solid transparent;background:#25D366;color:#0A2E16;font-family:"Tajawal",sans-serif;font-weight:700;font-size:1.02rem;cursor:pointer;transition:.4s;box-shadow:0 6px 30px -8px rgba(37,211,102,.5)}
+.bform .submit:hover{transform:translateY(-2px);box-shadow:0 10px 40px -8px rgba(37,211,102,.6)}
+.bform .submit svg{width:22px;height:22px;fill:currentColor}
+.bform .err{color:#E8A0A0;font-size:.84rem;margin-top:10px;min-height:1.1em;text-align:center;font-family:"Tajawal",sans-serif}
+
 /* footer */
 footer{background:#0A0708;color:rgba(237,230,221,.7);padding:60px 0 28px;border-top:1px solid var(--line)}
 .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:34px;padding-bottom:32px;border-bottom:1px solid var(--line)}
@@ -186,9 +214,11 @@ footer{background:#0A0708;color:rgba(237,230,221,.7);padding:60px 0 28px;border-
 #lb img{max-width:90vw;max-height:88vh;border-radius:10px;box-shadow:0 40px 100px rgba(0,0,0,.8),0 0 60px rgba(201,162,75,.12)}
 #lb .x{position:absolute;top:24px;inset-inline-end:30px;color:var(--gold);font-size:2.6rem;cursor:pointer;line-height:1;font-family:"Cormorant Garamond",serif}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(30px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
-.rv.in{opacity:1;transform:none}
+/* reveal — keyframe-based (avoids the Chromium "transition stuck at start value"
+   glitch that can leave opacity-transitioned elements permanently invisible) */
+.rv{opacity:0;transform:translateY(30px)}
+.rv.in{animation:reveal .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes reveal{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 
 @media(max-width:900px){
   .menu{position:fixed;top:0;bottom:0;right:0;left:auto;width:74%;max-width:320px;z-index:920;background:#100A0C;border-inline-start:1px solid var(--line);flex-direction:column;justify-content:center;gap:32px;transform:translateX(106%);transition:transform .4s ease;box-shadow:-20px 0 60px rgba(0,0,0,.6)}
@@ -198,11 +228,14 @@ footer{background:#0A0708;color:rgba(237,230,221,.7);padding:60px 0 28px;border-
   .about{grid-template-columns:1fr;gap:36px}
   .about-art{height:60vh;order:-1}
   .svc-grid{grid-template-columns:1fr}
+  .book-grid{grid-template-columns:1fr;gap:30px}
   .scene-no{font-size:clamp(2.8rem,16vw,5rem);top:70px}
 }
 @media(max-width:560px){
   .hero h1{font-size:2.9rem}
   .shot{flex:0 0 78vw}
+  .bform{padding:28px 22px}
+  .bform .row{grid-template-columns:1fr}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -224,15 +257,21 @@ footer{background:#0A0708;color:rgba(237,230,221,.7);padding:60px 0 28px;border-
       <a href="#services">الخدمات</a>
       <a href="#gallery">الإطلالات</a>
       <a href="#bts">خلف الكواليس</a>
-      <a class="navcta" href="https://www.instagram.com/emy.artist/" target="_blank" rel="noopener">احجزي عبر إنستقرام</a>
+      <a class="navcta" href="#book">احجزي موعدك</a>
     </div>
     <button class="burger" id="burger" aria-label="القائمة"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
-<a class="ig" id="top" href="https://www.instagram.com/emy.artist/" target="_blank" rel="noopener" aria-label="إنستقرام">
-  <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 01-1.38-.9 3.72 3.72 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.19.4-.55.22-.94.47-1.35.88-.41.41-.66.8-.88 1.35-.16.42-.35 1.04-.4 2.19-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.4 2.19.22.55.47.94.88 1.35.41.41.8.66 1.35.88.42.16 1.04.35 2.19.4 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.19-.4.55-.22.94-.47 1.35-.88.41-.41.66-.8.88-1.35.16-.42.35-1.04.4-2.19.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.4-2.19a3.64 3.64 0 00-.88-1.35 3.64 3.64 0 00-1.35-.88c-.42-.16-1.04-.35-2.19-.4-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.3 5.3 0 110 10.6 5.3 5.3 0 010-10.6zm0 8.74a3.44 3.44 0 100-6.88 3.44 3.44 0 000 6.88zm6.75-8.94a1.24 1.24 0 11-2.48 0 1.24 1.24 0 012.48 0z"/></svg>
-</a>
+<span id="top"></span>
+<div class="floats">
+  <a class="fab fab-wa" href="https://wa.me/966565109961" target="_blank" rel="noopener" aria-label="واتساب">
+    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.91zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+  <a class="fab fab-ig" href="https://www.instagram.com/emy.artist/" target="_blank" rel="noopener" aria-label="إنستقرام">
+    <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 01-1.38-.9 3.72 3.72 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.52.01-4.76.07-1.15.05-1.77.24-2.19.4-.55.22-.94.47-1.35.88-.41.41-.66.8-.88 1.35-.16.42-.35 1.04-.4 2.19-.06 1.24-.07 1.61-.07 4.76s.01 3.52.07 4.76c.05 1.15.24 1.77.4 2.19.22.55.47.94.88 1.35.41.41.8.66 1.35.88.42.16 1.04.35 2.19.4 1.24.06 1.61.07 4.76.07s3.52-.01 4.76-.07c1.15-.05 1.77-.24 2.19-.4.55-.22.94-.47 1.35-.88.41-.41.66-.8.88-1.35.16-.42.35-1.04.4-2.19.06-1.24.07-1.61.07-4.76s-.01-3.52-.07-4.76c-.05-1.15-.24-1.77-.4-2.19a3.64 3.64 0 00-.88-1.35 3.64 3.64 0 00-1.35-.88c-.42-.16-1.04-.35-2.19-.4-1.24-.06-1.61-.07-4.76-.07zm0 2.76a5.3 5.3 0 110 10.6 5.3 5.3 0 010-10.6zm0 8.74a3.44 3.44 0 100-6.88 3.44 3.44 0 000 6.88zm6.75-8.94a1.24 1.24 0 11-2.48 0 1.24 1.24 0 012.48 0z"/></svg>
+  </a>
+</div>
 
 <div class="scenes">
 
@@ -245,7 +284,7 @@ footer{background:#0A0708;color:rgba(237,230,221,.7);padding:60px 0 28px;border-
       <h1>إطلالة<br>تُحاكي <em>الضوء</em></h1>
       <div class="role">إيمان اليوسف · ميك اب ارتست · جدة</div>
       <p class="sub">مكياج عرايس وسهرات بإحساس سينمائي فاخر، يُبرز ملامحكِ ويصنع طلّة لا تُنسى لمناسبتكِ.</p>
-      <a class="btn btn-gold" href="https://www.instagram.com/emy.artist/" target="_blank" rel="noopener">احجزي إطلالتكِ عبر إنستقرام</a>
+      <a class="btn btn-gold" href="#book">احجزي موعدكِ</a>
     </div>
     <div class="scroll-cue">تابعي<div class="bar"></div></div>
   </section>
@@ -352,15 +391,53 @@ footer{background:#0A0708;color:rgba(237,230,221,.7);padding:60px 0 28px;border-
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="scene snap cta-scene" id="book">
+  <!-- SCENE 07 — BOOKING -->
+  <section class="scene tall book-scene" id="book">
+    <span class="scene-no">07</span>
     <div class="wrap">
-      <div class="cta rv">
-        <span class="eyebrow">احجزي إطلالتكِ</span>
-        <h2 style="margin-top:18px">جاهزة لإطلالة <em>تليق بكِ؟</em></h2>
-        <p>راسلي إيمان على إنستقرام بتاريخ مناسبتكِ ونوع الإطلالة، وتُرتَّب لكِ التفاصيل والموعد.</p>
-        <a class="btn btn-gold" href="https://www.instagram.com/emy.artist/" target="_blank" rel="noopener">تواصلي عبر إنستقرام</a>
-        <div class="handle">‎@emy.artist · جدة</div>
+      <div class="book-grid">
+        <div class="book-intro rv">
+          <div class="head">
+            <span class="chapter">احجزي موعدك</span>
+            <h2>جاهزة لإطلالة <em>تليق بكِ؟</em></h2>
+            <div class="uline"></div>
+          </div>
+          <p>عبّئي تفاصيل طلبكِ ونوع الإطلالة وتاريخ مناسبتكِ، ويُرسَل الطلب مباشرة إلى إيمان عبر واتساب لترتيب الموعد والتفاصيل.</p>
+          <p>أو راسليها مباشرة على واتساب وستردّ عليكِ في أقرب وقت.</p>
+          <a class="wa-direct" href="https://wa.me/966565109961" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.91zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            واتساب · 0565109961
+          </a>
+        </div>
+        <form class="bform rv" id="bookForm" novalidate>
+          <div class="field">
+            <label for="bf-name">الاسم</label>
+            <input type="text" id="bf-name" name="name" placeholder="اكتبي اسمكِ" autocomplete="name" />
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="bf-service">نوع الخدمة</label>
+              <select id="bf-service" name="service">
+                <option value="مكياج عروس">مكياج عروس</option>
+                <option value="مكياج سهرة ومناسبة">مكياج سهرة ومناسبة</option>
+                <option value="استشارة">استشارة</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="bf-date">التاريخ المتوقع</label>
+              <input type="date" id="bf-date" name="date" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="bf-note">ملاحظة <span style="opacity:.6;font-weight:400">(اختياري)</span></label>
+            <textarea id="bf-note" name="note" placeholder="أي تفاصيل تحبّين إضافتها عن المناسبة أو الإطلالة"></textarea>
+          </div>
+          <button type="submit" class="submit" id="bookSubmit">
+            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.477-.91zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            إرسال الطلب عبر واتساب
+          </button>
+          <div class="err" id="bookErr"></div>
+        </form>
       </div>
     </div>
   </section>
@@ -409,8 +486,22 @@ burger.addEventListener('click',()=>menu.classList.toggle('open'));
 menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
 
 // reveal + underline
-const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.18});
-document.querySelectorAll('.rv,.head').forEach(el=>io.observe(el));
+const revealEls=document.querySelectorAll('.rv,.head');
+// rootMargin bottom +14% => fire while the element is still just below the fold,
+// so the opacity transition initializes a frame before the element paints in view
+// (prevents Chromium "stuck at start value" transition glitch).
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:0,rootMargin:'0px 0px 14% 0px'});
+revealEls.forEach(el=>io.observe(el));
+// safety net for fast/programmatic scrolls: reveal anything in or past the viewport
+function revealInView(){
+  revealEls.forEach(el=>{
+    if(el.classList.contains('in'))return;
+    const r=el.getBoundingClientRect();
+    if(r.top<innerHeight*1.05 && r.bottom>-50){el.classList.add('in');io.unobserve(el);}
+  });
+}
+addEventListener('scroll',revealInView,{passive:true});
+addEventListener('load',()=>setTimeout(revealInView,120));
 
 // hero + bts parallax (skip on reduced motion)
 const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -450,6 +541,34 @@ addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('open')})
 
 // year
 document.getElementById('yr').textContent=new Date().getFullYear();
+
+// booking form -> whatsapp
+(function(){
+  const WA='966565109961';
+  const form=document.getElementById('bookForm');
+  if(!form)return;
+  const errEl=document.getElementById('bookErr');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const name=document.getElementById('bf-name').value.trim();
+    const service=document.getElementById('bf-service').value;
+    const date=document.getElementById('bf-date').value.trim();
+    const note=document.getElementById('bf-note').value.trim();
+    if(!name){
+      errEl.textContent='الرجاء كتابة الاسم قبل إرسال الطلب.';
+      document.getElementById('bf-name').focus();
+      return;
+    }
+    errEl.textContent='';
+    let msg='السلام عليكم، حابة أحجز موعد:\n';
+    msg+='الاسم: '+name+'\n';
+    msg+='الخدمة: '+service+'\n';
+    msg+='التاريخ: '+(date||'غير محدد')+'\n';
+    msg+='ملاحظة: '+(note||'لا يوجد');
+    const url='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+    window.open(url,'_blank','noopener');
+  });
+})();
 </script>
 </body>
 </html>
